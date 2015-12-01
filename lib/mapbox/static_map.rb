@@ -17,7 +17,7 @@ class StaticMap
   # api.tiles.mapbox.com/v3/examples.map-4l7djmvo/-77.04,38.89,13/400x300.png
   # api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-m-monument(-77.04,38.89)/-77.04,38.89,13/400x300.png
   def to_s
-    base = "#{StaticMap.api_path}/#{self.api_id}/#{marker_string}#{lon},#{lat},#{zoom}/#{width}x#{height}.png"
+    base = "#{StaticMap.api_path}/#{self.api_id}/#{marker_string}#{lon},#{lat},#{zoom}/#{width}x#{height}@2x.png"
     query = params && params.length > 0 ? '?'+URI.encode_www_form(params) : ''
     base + query
   end
